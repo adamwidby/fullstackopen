@@ -6,9 +6,9 @@ sequenceDiagram
 
     browser->>server: GET asdf
     activate server
-    server-->>browswer: HTML qwer
+    server-->>browser: HTML qwer
     deactivate server
 
     Note right of browser: this is the note right of the browser
 
-```
+```g
