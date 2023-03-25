@@ -11,4 +11,4 @@ sequenceDiagram
 
     Note right of browser: this is the note right of the browser
 
-```g
+```
