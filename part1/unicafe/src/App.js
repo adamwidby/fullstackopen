@@ -8,26 +8,41 @@ const Button = (props) => {
   );
 };
 
+const DisplayStatLine = ({ text, value }) => {
+  return (
+    <tr>
+      <td>{text}</td>
+      <td>{value}</td>
+    </tr>
+  );
+};
+
 const DisplayStats = ({ good, neutral, bad }) => {
   const totalScores = good + neutral + bad;
   let averageScore = "";
   let positiveRate = "";
-  console.log(totalScores);
   if (totalScores !== 0) {
     averageScore = (good - bad) / totalScores;
     positiveRate = good / totalScores;
   } else {
-    averageScore = "No data yet";
+    return (
+      <>
+        <h2>Statistics</h2>
+        <p>No feedback given</p>
+      </>
+    );
   }
   return (
     <>
       <h2>Statistics</h2>
-      <div>Good: {good}</div>
-      <div>Neutral: {neutral}</div>
-      <div>Bad: {bad}</div>
-      <div>Total: {totalScores}</div>
-      <div>Average: {averageScore}</div>
-      <div>Positive: {positiveRate * 100} %</div>
+      <table>
+        <DisplayStatLine text="Good" value={good} />
+        <DisplayStatLine text="Neutral" value={neutral} />
+        <DisplayStatLine text="Bad" value={bad} />
+        <DisplayStatLine text="Total" value={totalScores} />
+        <DisplayStatLine text="Average" value={averageScore} />
+        <DisplayStatLine text="Positive" value={positiveRate} />
+      </table>
     </>
   );
 };
