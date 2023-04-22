@@ -1,4 +1,4 @@
-const DisplayPerson = (props) => {
+const Person = (props) => {
   return (
     <li>
       {props.name} {props.number}
@@ -6,4 +6,4 @@ const DisplayPerson = (props) => {
   );
 };
 
-export default DisplayPerson;
+export default Person;
