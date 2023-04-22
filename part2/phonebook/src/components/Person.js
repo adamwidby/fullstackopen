@@ -1,6 +1,9 @@
 const DisplayPerson = (props) => {
-  console.log("props.name: ", props.name);
-  return <li>{props.name}</li>;
+  return (
+    <li>
+      {props.name} {props.number}
+    </li>
+  );
 };
 
 export default DisplayPerson;
