@@ -9,7 +9,12 @@ const Persons = (props) => {
         )
         .map((person) => {
           return (
-            <Person key={person.id} name={person.name} number={person.number} />
+            <Person
+              key={person.id}
+              name={person.name}
+              number={person.number}
+              removeName={() => props.removeName(person.id)}
+            />
           );
         })}
     </ul>
